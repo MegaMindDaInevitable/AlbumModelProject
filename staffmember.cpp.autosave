@@ -1,0 +1,39 @@
+
+#include "staffmember.h"
+
+StaffMember::StaffMember() : m_name(" "), m_birthDate(QDate::currentDate()), m_type(Permanent)
+{
+
+}
+StaffMember::StaffMember(QString name, QDate birthDate, AppointmentType type): m_name(name), m_birthdate(birthdate), m_type(type){}
+
+QString StaffMember::getName() const {
+    return m_name;
+}
+QDate StaffMember::getBirthdate() const {
+    return m_birthDate;
+}
+StaffMember::AppointmentType StaffMember::getAppointmentType() const{
+    return m_type;
+}
+
+
+QString StaffMember::getAppointmentTypeString() const{
+    switch(m_type){
+    case Permanent: return "Permanent";
+    case PartTime: return "Part-time";
+    case Contract: return "Contract";
+    default :return "Unknown";
+        
+    }
+}
+
+
+void StaffMember::setName(QString name) {
+    m_name = name;
+}
+void StaffMemeber::setBirthdate(QDate birthdate) {
+    m_birthdate = birthdate
+}
+
+void StaffMember::setAppointmentType(Appoint
