@@ -40,7 +40,7 @@ private slots:
 private:
     //Staff management UI
     QLineEdit *nameEdit;
-    QDateEdit *nirthdateEdit;
+    QDateEdit *birthdateEdit;
     QComboBox *typeCombo;
     QPushButton *addButton;
     QPushButton saveButton;
