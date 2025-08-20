@@ -57,7 +57,20 @@ private:
 
 
     //refelective programming UI
+    QPushButton *reflectiveButton;
+    QTextEdit *reflectiveDisplay;
 
+
+    //Data Storage
+
+    QList<StaffMember> staffList;
+    AlbumModel *albumModel;
+    QList<ReflectiveStaffMember*> reflectiveStaffList;
+
+    void setupStaffUI();
+    voidsetupAlbumUI();
+    void setupReflectiveUI();
+    void createMenu();
 
 
 
