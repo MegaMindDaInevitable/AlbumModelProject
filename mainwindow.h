@@ -43,7 +43,7 @@ private:
     QDateEdit *birthdateEdit;
     QComboBox *typeCombo;
     QPushButton *addButton;
-    QPushButton saveButton;
+    QPushButton *saveButton;
     QTextEdit *staffDisplay;
 
     //Album management UI
@@ -54,6 +54,7 @@ private:
     QSpinBox *ratingSpin;
     QPushButton *addAlbumButton;
     QPushButton *deleteAlbumButton;
+    QTableView *albumTable;
 
 
     //refelective programming UI

@@ -38,7 +38,14 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Album Model");
     setMinimumSize(1000,700);
 
+    //create a central widget and layout
+    QWidget *centralWidget = new QWidget(this);
+    QHBoxLayout *mainLayout = new QHBoxLayout(centralWidget);
+
     //create a tab widget for different sections
+    QTabWidget *tabWidget = new QTabWidget(centralWidget);
+
+    //staff management tab
     QTabWidget *staffTab = new QWidget(tabWidget);
     setupStaffUI();
     QVBoxLayout  *staffLayout = new QVBoxLayout(staffTab);
@@ -94,7 +101,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     tabWidget->addTab(reflectiveTab, "Reflective Programming");
 
-    maubLayout->addWidget(tabWidget);
+    mainLayout->addWidget(tabWidget);
     setCentralWidget(centralWidget);
 
     createMenu();
@@ -135,7 +142,34 @@ void MainWindow::setupStaffUI()
 
 }
 
+void MainWindow::voidsetupAlbumUI()
+{
+    composerEdit = new QLineEdit(this);
+    albumEdit = new QLineEdit(this);
 
+    costSpin = QDoubleSpinBox(this);
+    costSpin->setRange(0.0, 1000.0);
+    costSpin->setDecimals(2);
+    costSpin->setPrefix("R");
+
+    ratingSpin = QSpinBox(this);
+    ratingSpin->setRange(0, 100);
+
+
+    addAlbumButton = new QPushButton("Add Album", this);
+    deleteAlbumButton = new QPushButton("Delete Selected Album",this);
+
+    albumTable = new QTableView(this);
+    albumModel = new AlbumModel(this);
+    albumTable->setModel(albumModel);
+
+    albumTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+
+    connect(addAlbumButton, &QPushButton::clisked,this, &MainWindow::addAlbum );
+    connect(deleteAlbumButton, &QPushButton::clicked,this, &MainWindow::deleteAlbum);
+
+}
 
 
 

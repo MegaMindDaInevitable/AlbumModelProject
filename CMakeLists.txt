@@ -16,8 +16,12 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         staffmember.cpp
+        reflectivestaffmember.cpp
+        albummodel.cpp
+        albummodel.h
         mainwindow.h
         staffmember.h
+        reflectivestaffmember.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
