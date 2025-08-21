@@ -74,6 +74,32 @@ MainWindow::MainWindow(QWidget *parent)
     albumFormLayout->addRow("Rating: ", ratingSpin);
     albumLayout->addLayout(albumFormLayout);
 
+    QHBoxLayout *albumButtonLayout = new QHBoxLyout();
+    albumButtonLayout->addWidget(addAlbumButton);
+    albumButtonLayout->addWidget(deleteAlbumButton);
+    albumLayout->addLayout(albumButtonLayout);
+    albumLayout->addWidget(albumTable);
+
+    tabWidget->addTab(albumTab, "Album Management");
+
+
+    //Refletive programming tab
+
+    QWidget *reflectiveTab = new QWidget(tabWidget);
+    setupReflectiveUI();
+    QVBoxLayout *reflectiveLayout = new QVBoxLayout(reflectiveTab);
+    reflectiveLayout->addWidget(new QLabel("Reflective Programming"));
+    reflectiveLayout->addWidget(reflectiveButton);
+    reflectiveLayout->addWidget(reflectiveDisplay);
+
+    tabWidget->addTab(reflectiveTab, "Reflective Programming");
+
+    maubLayout->addWidget(tabWidget);
+    setCentralWidget(centralWidget);
+
+    createMenu();
+    updateUI();
+
 }
 
 MainWindow::~MainWindow()
