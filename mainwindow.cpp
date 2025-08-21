@@ -104,6 +104,60 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    qDeleteAll(reflectiveStaffList);
+    delete albumModel;
+
 }
+
+void MainWindow::setupStaffUI()
+{
+    nameEdit = new QLineEdit(this);
+    birthdateEdit = new QDateEdit(QDate::currentDate(),this);
+    birthdateEdit->setCalendar(true);
+
+    typeCombo = new QComboBox(this);
+    typeCombo->addItem("Permanent", StaffMember::Permanent);
+    typeCombo->addItem("Part-time", StaffMember::PartTime);
+    typeCombo->addItem("Contract",  StaffMember::Contract);
+
+
+    addButton = new QPushButton("Add Staff Member", this);
+    saveButton = new QPushButton("Save to File", this);
+
+
+
+    staffDisplay = new QTextEdit(this);
+    staffDisplay->setReadOnly(true);
+
+    connect(addButton, &QPushButton::clicked,this,&MainWindow::addStaffMember);
+    connect(saveButton, &QPushButton::clicked,this, &MainWindow::saveStaffToFile);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
