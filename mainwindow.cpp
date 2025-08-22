@@ -171,6 +171,45 @@ void MainWindow::voidsetupAlbumUI()
 
 }
 
+void MainWindow::setupReflectiveUI()
+{
+    reflectiveButton = new QPushButton("Show Reflective Info", this);
+    reflectiveDisplay= new QTextEdit(this);
+    reflectiveDisplay->setReadOnly(true);
+
+    connect(reflectiveButton, &QPushButton::clicked, this, &MainWindow::showReflectiveInfo);
+
+
+}
+
+void MainWindow::createMenu()
+{
+    QMenu *fileMenu = menuBar()->addMenu("File");
+    QAction *exitAction = fileMenu->addAction("Exit");
+    connect(exitAction, &QAction::triggered, this, &QMainWindow::close);
+
+
+    QMenu *helpMenu = menuBar()->addMenu("Help");
+    QAction *aboutAction = helpMenu->addAction("About");
+    connect(aboutAction,&QAction::triggered,[](){QMessageBox::about(nullptr,"About","Album Model Application");});
+}
+
+void MainWindow::addStaffMember()()
+{
+    QString name = nameEdit->text().trimmed();
+    if(name.isEmpty())
+    {
+        QMessageBox::warning(this,"Input Error", "Please Enter a name. ");
+        nameEdit->setFocus();
+        return;
+    }
+
+    QDate birthdate = birthdateEdit->date();
+    staffMember::AppointmentType type = static_cast<StaffMemeber::AppointmentType>(
+        typeCombo->currentData().toInt());
+
+    staffList.append(staffMemeber(name, birthdate, type));
+}
 
 
 
