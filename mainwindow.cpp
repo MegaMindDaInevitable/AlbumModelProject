@@ -302,7 +302,19 @@ void MainWindow::addAlbum()
     updateUI();
 }
 
+void MainWindow::deleteAlbum(){
+    QModelIndexList selected = albumTable->selectionMode()->selectedRows();
+    if(selected.isEmpty()){
+        QMessageBox::information(this, "Delete", "Please select an Album to delete.");
+        return;
+    }
 
+    for(const QModelIndex &index : selected){
+        albumModel->removeAlbum(index.row());
+    }
+
+    updateUI();
+}
 
 
 
