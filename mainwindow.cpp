@@ -231,6 +231,51 @@ void MainWindow::addStaffMember()()
 
 
     //clear input fields
+    nameEdit->clear();
+    birthdateedit->setDate(QDate::currentDate());
+    typeCombo->setCurrentIndex(0);
+
+    nameEdit->setFocus();
+    updateUI();
+
+
+}
+
+void MainWindow::saveStaffToFile(){
+    if(staffList.isEmpty()){
+        QMessageBox::information(this, "save", "No staff members to save");
+        return;
+    }
+
+    QString fileName = QFileDialog::getSaeFileName(this, "Save Staff Data", " ", "Text Files( *.txt)");
+
+    if(fileName.isEmpty()) return;
+
+
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QMessageBox::warning(this, "Save Error", "Cannot open file for writing. ");
+        return;
+
+    }
+
+    QTextStream out(&file);
+    for(const StaffMember &staff : staffList)
+    {
+        out <<"name: "<<staff.getName() << "; ";
+        out <<"date:  "<<staff.getBirthdate().toString("yyyy-MM-dd")<<"; ";
+        out <<"type:"staff.getAppointmentTypestring()<<";\n";
+    }
+
+    file.close();
+    QMessageBox::information(this, "Save", "Staff data saved successfully.");
+
+
+}
+
+void MainWindow::addAlbum()
+{
+
 }
 
 
