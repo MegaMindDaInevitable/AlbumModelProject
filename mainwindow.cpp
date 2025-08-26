@@ -209,6 +209,28 @@ void MainWindow::addStaffMember()()
         typeCombo->currentData().toInt());
 
     staffList.append(staffMemeber(name, birthdate, type));
+
+
+    //Also add to reflective list
+    ReflectiveStaffMember::AppointmentType refType;
+    switch(type)
+    {
+    case StaffMember::Permanent: refType = ReflectiveStaffMemeber::Permanent; break;
+    case StaffMember::PartTime: refType = RefelectiveStaffMemeber::PartTime; break;
+    case StaffMammber::Contract: refType = ReflectivestaffMember::Contract; break;
+    }
+
+    reflectiveStaffList.append(new ReflectiveStaffMember(name, birthdate, refType, this));
+
+    //Update display
+    staffDisplay->append(QString("%1: %2, %3, %4")
+        .arg(staffList.size())
+        .arg(name)
+        .arg(birthdate.toString("yyyy-MM-dd"))
+                             .arg(typeCombo->currentText()));
+
+
+    //clear input fields
 }
 
 
