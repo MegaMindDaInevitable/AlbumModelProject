@@ -276,7 +276,32 @@ void MainWindow::saveStaffToFile(){
 void MainWindow::addAlbum()
 {
 
+    QString composer = composerEdit-text().trimmed();
+    QString album = albumEdit->text().trimmed();
+
+    if(composer.isEmpty()||album.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Please enter both composer and album name");
+        return;
+    }
+
+    double cost = costSpin->Value();
+    int rating = ratingSpin->Value();
+
+    albumModel->addAlbum(composer, album, cost, rating);
+
+
+    //clear input fields
+
+    composerEdit->clear();
+    albumEdit->clear();
+    costSpin->setValue(0.0);
+    ratingSpin->setValue(0);
+
+    composerEdit->setFocus();
+    updateUI();
 }
+
 
 
 
