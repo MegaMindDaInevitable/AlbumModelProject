@@ -316,8 +316,43 @@ void MainWindow::deleteAlbum(){
     updateUI();
 }
 
+void MainWindow::showReflectiveInfo()
+{
+    if(reflectiveStaffList.isEmpty()){
+            reflectiveDisplay->setText("No staff memebers added yet.");
+        return;
+        }
 
+    QString info;
+        for(ReflectiveStaffMember *staff : reflectiveStaffList)
+    {
+        const QMetaObject *meta = staff->metaObject();
+        info += "Object : "  + QString(meta->className()) + "\n";
 
+        for(int i = meta->propertyOffset(); i < meta->propertyCount(); i++)
+        {
+            QMetaProperty property = meta->property(i);
+            QVarient value = property.read(staff);
+            info += QString(" %1: %2\n").arg(property.name()).arg(value.toString());
+        }
+
+        info += "\n";
+    }
+
+        reflectiveDisplay->setText(info);
+}
+
+void MainWindow::updateUI()
+{
+        bool hasStaff = !staffList.isEmpty();
+        saveButton->setEnabled(hasStaff);
+
+        bool hasAlbums = albumModel->rowCount() > 0;
+        deleteAlbumButton->setEnabled(hasAlbums);
+
+        bool hasReflectiveStaff = !reflectiveStaffList.isEmpty();
+        hasReflectiveButton->setEnabled(hasReflectiveStaff);
+}
 
 
 
