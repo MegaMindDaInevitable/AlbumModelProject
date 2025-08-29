@@ -20,7 +20,9 @@ int main(int argc, char *argv[])
     palette.setColor(QPalette::AlternateBase,QColor(233, 231, 227));
     palette.setColor(QPalette::ToolTipBase, Qt::white);
     palette.setColor(QPalette::ToolTipText, Qt::black);
-    palette.setColor(QPalette::
+    palette.setColor(QPalette::Text, Qt::black);
+    palette.setColor(QPalette::Button, QColor(240, 240, 240));
+    palette.setColor(QPalette::ButtonText,
 
 
     MainWindow w;
