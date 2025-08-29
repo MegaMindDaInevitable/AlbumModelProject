@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     palette.setColor(QPalette::Button, QColor(240, 240, 240));
     palette.setColor(QPalette::ButtonText,Qt::black);
     palette.setColor(QPalette::BrightText,Qt::red);
+    palette.setColor(QPalette::Highlight,QColor(142, 45, 197).lighter());
 
 
     MainWindow w;
