@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     palette.setColor(QPalette::HighlightedText, Qt::black);
 
 
-    MainWindow w;
-    w.show();
+    MainWindow mainWindow;
+    mainWindow.show();
     return a.exec();
 }
