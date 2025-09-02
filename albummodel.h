@@ -22,6 +22,14 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
     bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+
+    //custom methods
+
+    void addAlbum(const QStrng &composer, const QString &albumName, double cost, int rating);
+
+    void removeAlbum(int row);
 };
 
 #endif // ALBUMMODEL_H
