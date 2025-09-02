@@ -11,6 +11,7 @@
 
 class AlbumModel : public QAbstractItemModel
 {
+    Q_OBJECT
 public:
     explicit AlbumModel(QObject *parent = nullptr);
     //requred overrrides
