@@ -9,7 +9,7 @@
 #include <QList>
 
 
-class AlbumModel
+class AlbumModel : public QAbstractItemModel
 {
 public:
     explicit AlbumModel(QObject *parent = nullptr);
