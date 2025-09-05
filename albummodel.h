@@ -30,6 +30,13 @@ public:
     void addAlbum(const QStrng &composer, const QString &albumName, double cost, int rating);
 
     void removeAlbum(int row);
+
+private:
+    struct AlbumModel
+    {
+        QString composer;
+
+    }
 };
 
 #endif // ALBUMMODEL_H
