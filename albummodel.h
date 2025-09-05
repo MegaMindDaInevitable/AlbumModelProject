@@ -35,6 +35,7 @@ private:
     struct AlbumModel
     {
         QString composer;
+        QString albumName;
 
     }
 };
