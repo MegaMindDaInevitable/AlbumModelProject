@@ -37,6 +37,7 @@ private:
         QString composer;
         QString albumName;
         double cost;
+        int rating;
 
     }
 };
