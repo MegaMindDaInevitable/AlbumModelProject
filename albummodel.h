@@ -39,7 +39,7 @@ private:
         double cost;
         int rating;
 
-    }
+    };
 };
 
 #endif // ALBUMMODEL_H
