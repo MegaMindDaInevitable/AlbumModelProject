@@ -40,6 +40,7 @@ private:
         int rating;
 
     };
+    QList<Album> m_albums;
 };
 
 #endif // ALBUMMODEL_H
