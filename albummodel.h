@@ -36,6 +36,7 @@ private:
     {
         QString composer;
         QString albumName;
+        double cost;
 
     }
 };
