@@ -17,3 +17,21 @@ int AlbumModel::columnCount(const QModelIndex &parent) const{
 
     return 4;
 }
+
+
+QVariant AlbumModel::data(const QModelIndex &index, int role) const {
+    if(!index.isValid() || role != Qt::DisplayRole)
+        return QVariant();
+    const Album &album = m_albums[index.row()];
+
+    switch (index.column())
+    {
+    case 0: return album.composer;
+    case 1: return album.albumName;
+    case 2: return QString::number(album.cost, 'f', 2);
+    case 3: return album.rating;
+    default : return QVariant();
+
+
+    }
+}
