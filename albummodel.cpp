@@ -11,3 +11,9 @@ int AlbumModel::rowCount(const QModelIndex &parent) const{
     Q_UNUSED(parent);
     return m_albums.size();
 }
+
+int AlbumModel::columnCount(const QModelIndex &parent) const{
+    Q_UNUSED(parent);
+
+    return 4;
+}
