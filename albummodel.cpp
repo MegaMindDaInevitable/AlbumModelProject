@@ -2,6 +2,7 @@
 #include "albummodel.h"
 #include <QString>
 
+
 AlbumModel::AlbumModel(QObject *parent): QAbstractTableModel(parent)
 {
 

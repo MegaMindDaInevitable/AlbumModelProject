@@ -4,6 +4,7 @@
 
 #include <QAbstractTableModel>
 #include <QList>
+#include <QVariant>
 
 
 class AlbumModel : public QAbstractItemModel
