@@ -42,4 +42,8 @@ QVariant AlbumModel::headerData(int section, Qt::Orientation orientation, int ro
         return QVariant();
     switch(section)
     {
+    case 0: return "Composer";
+    case 1: return "Album Name";
+    }
 }
+
