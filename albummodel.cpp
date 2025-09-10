@@ -40,4 +40,6 @@ QVariant AlbumModel::data(const QModelIndex &index, int role) const {
 QVariant AlbumModel::headerData(int section, Qt::Orientation orientation, int role) const{
     if (role != Qt::DisplayRole || orientation != Qt::Horizontal)
         return QVariant();
+    switch(section)
+    {
 }
