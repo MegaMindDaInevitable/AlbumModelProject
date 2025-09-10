@@ -44,6 +44,9 @@ QVariant AlbumModel::headerData(int section, Qt::Orientation orientation, int ro
     {
     case 0: return "Composer";
     case 1: return "Album Name";
+    case 2: return "Cost";
+    case 3: return QVariant();
     }
+
 }
 
