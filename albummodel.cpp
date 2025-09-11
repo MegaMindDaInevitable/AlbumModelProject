@@ -59,10 +59,10 @@ bool AlbumModel::setData(const QModelIndex &index, const QVariant &value, int ro
     Album &album = m_albums[index.isValid()];
     switch (index.column())
     {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
+    case 0: album.composer = value.toString(); break;
+    case 1: album.albumName = value.toString(); break;
+    case 2: album.cost = value.toInt(); break;
+    case 3: album.rating = value.toInt(); break;
     default: return false;
     }
 }
