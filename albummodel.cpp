@@ -54,4 +54,7 @@ QVariant AlbumModel::headerData(int section, Qt::Orientation orientation, int ro
 bool AlbumModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if(role != Qt::EditRole || !index.isValid())
+        return false;
+
+    Album &album = m_albums[index.isValid()];
 }
