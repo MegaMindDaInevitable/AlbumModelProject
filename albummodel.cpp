@@ -57,4 +57,12 @@ bool AlbumModel::setData(const QModelIndex &index, const QVariant &value, int ro
         return false;
 
     Album &album = m_albums[index.isValid()];
+    switch (index.column())
+    {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    default: return false;
+    }
 }
