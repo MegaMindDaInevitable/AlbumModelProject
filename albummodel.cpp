@@ -65,4 +65,7 @@ bool AlbumModel::setData(const QModelIndex &index, const QVariant &value, int ro
     case 3: album.rating = value.toInt(); break;
     default: return false;
     }
+
+    emit dataChanged(index, index);
+    return true;
 }
