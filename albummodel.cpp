@@ -69,9 +69,9 @@ bool AlbumModel::setData(const QModelIndex &index, const QVariant &value, int ro
     emit dataChanged(index, index);
     return true;
 }
-Qt::ItemFlags AlbumModel::flags((const QModelIndex &index) const_pointer_cast)
+Qt::ItemFlags AlbumModel::flags(const QModelIndex &index) const
 {
     if(!index.isValid())
         return Qt::ItemIsEnabled;
-    return QAbstract
+    return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
 }
