@@ -75,3 +75,8 @@ Qt::ItemFlags AlbumModel::flags(const QModelIndex &index) const
         return Qt::ItemIsEnabled;
     return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
 }
+
+void AlbumModel::addAlbum(const QString &composer, const QString &albumName, double cost, int rating)
+{
+
+}
