@@ -81,4 +81,10 @@ void AlbumModel::addAlbum(const QString &composer, const QString &albumName, dou
 
     beginInsertRows(QModelIndex(), m_albums.size(), m_albums.size());
     m_albums.append({composer, albumName, cost, rating});
+    endInsertRows();
+}
+
+void AlbumModel::removeAlbum(int row)
+{
+
 }
