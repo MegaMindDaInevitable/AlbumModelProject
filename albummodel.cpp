@@ -88,4 +88,8 @@ void AlbumModel::removeAlbum(int row)
 {
     if(row < 0 || row >= m_albums.size())
         return;
+
+    beginRemoveRows(QModelIndex(), row, row);
+    m_albums.removeAt(row);
+    endRemoveRows();
 }
