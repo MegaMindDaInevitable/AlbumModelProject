@@ -79,4 +79,6 @@ Qt::ItemFlags AlbumModel::flags(const QModelIndex &index) const
 void AlbumModel::addAlbum(const QString &composer, const QString &albumName, double cost, int rating)
 {
 
+    beginInsertRows(QModelIndex(), m_albums.size(), m_albums.size());
+    m_albums.append({composer, albumName, cost, rating});
 }
