@@ -86,5 +86,6 @@ void AlbumModel::addAlbum(const QString &composer, const QString &albumName, dou
 
 void AlbumModel::removeAlbum(int row)
 {
-
+    if(row < 0 || row >= m_albums.size())
+        return;
 }
