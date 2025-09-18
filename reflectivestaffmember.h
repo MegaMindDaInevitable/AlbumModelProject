@@ -17,6 +17,7 @@ class ReflectiveStaffMember : public QObject
     Q_PROPERTY(AppointmentType appointmentType READ appointmentType WRITE setAppointmentType)
 public:
     ReflectiveStaffMember();
+    enum AppointmentType {Permanent, partTime, Contract};
 };
 
 #endif // REFLECTIVESTAFFMEMBER_H
