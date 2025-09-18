@@ -14,6 +14,7 @@ class ReflectiveStaffMember : public QObject
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName)
     Q_PROPERTY(QDate birthdate READ birthdate WRITE setBirthdate)
+    Q_PROPERTY(AppointmentType appointmentType READ appointmentType WRITE setAppointmentType)
 public:
     ReflectiveStaffMember();
 };
