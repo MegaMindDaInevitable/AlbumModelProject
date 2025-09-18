@@ -9,7 +9,7 @@
 #include <QWidget>
 
 
-class ReflectiveStaffMember
+class ReflectiveStaffMember : public QObject
 {
 public:
     ReflectiveStaffMember();
