@@ -4,6 +4,8 @@
 
 
 #include <QObject>
+#include <QDate>
+#include <QString>
 #include <QWidget>
 
 
