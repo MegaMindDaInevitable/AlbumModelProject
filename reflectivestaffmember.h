@@ -21,6 +21,11 @@ public:
     Q_ENUM(Appointment)
     ReflectiveStaffMember(Qbjecct *parent = nullptr);
     ReflectiveStaffMember(QString name, QDate birthdate, AppointmentType type, QObject *parent = nullptr);
+
+private:
+    //private getters and setters
+    QString name() const;
+    void seName(const QString &name);
 };
 
 
