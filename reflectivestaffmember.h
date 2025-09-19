@@ -31,6 +31,7 @@ private:
     void AppointmentType(appointmentType type);
 
     QString m_name;
+    QDate m_birthdate;
 
 };
 
