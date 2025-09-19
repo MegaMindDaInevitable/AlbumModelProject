@@ -29,6 +29,9 @@ private:
     QDate birthdate() const;
     void setBirthdate(const QDate &birthdate);
     void AppointmentType(appointmentType type);
+
+    QString m_name;
+
 };
 
 
