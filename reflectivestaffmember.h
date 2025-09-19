@@ -27,6 +27,7 @@ private:
     QString name() const;
     void seName(const QString &name);
     QDate birthdate() const;
+    void setBirthdate(const QDate &birthdate);
 };
 
 
