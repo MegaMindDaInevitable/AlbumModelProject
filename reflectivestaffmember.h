@@ -26,6 +26,7 @@ private:
     //private getters and setters
     QString name() const;
     void seName(const QString &name);
+    QDate birthdate() const;
 };
 
 
