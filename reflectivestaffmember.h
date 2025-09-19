@@ -32,6 +32,7 @@ private:
 
     QString m_name;
     QDate m_birthdate;
+    AppointmentType m_type;
 
 };
 
