@@ -28,6 +28,7 @@ private:
     void seName(const QString &name);
     QDate birthdate() const;
     void setBirthdate(const QDate &birthdate);
+    void AppointmentType(appointmentType type);
 };
 
 
