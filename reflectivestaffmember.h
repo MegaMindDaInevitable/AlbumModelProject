@@ -18,7 +18,7 @@ class ReflectiveStaffMember : public QObject
 public:
     ReflectiveStaffMember();
     enum AppointmentType {Permanent, partTime, Contract};
-    Q_ENUM(Appointment)
+    Q_ENUM(AppointmentType)
     ReflectiveStaffMember(Qbjecct *parent = nullptr);
     ReflectiveStaffMember(QString name, QDate birthdate, AppointmentType type, QObject *parent = nullptr);
 
